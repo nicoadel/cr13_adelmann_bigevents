@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+ <h1>{{ article.title }}</h1>
+ <p>Description: {{ article.body }}</p>
+ <p>Time: {{ article.date }}</p>
+ <img src="{{ article.image }}" alt="">
+ <p>Capacity: {{ article.capacity }}</p>
+ <p>Email: {{ article.email }}</p>
+ <p>Phonenum: {{ article.phone }}</p>
+ <p>Address: {{ article.adress }}</p>
+  <p>URL: {{ article.url }}</p>
+ <hr>
+ <a href="/">Go Back</a>
+{% endblock %}

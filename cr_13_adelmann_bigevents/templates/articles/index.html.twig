@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Events{% endblock %}
+
+{% block body %}
+  {% if articles %}
+     {% for article in articles %}
+   <div class="col-lg-4 col-md-6 col-sm-12 col-12 portfolio-item">
+          <div class="card h-100 card_travel">
+            <h1>{{ article.title }}</h1>
+            <div class="card-body card-index">
+              <h4 class="card-title">
+                <img src="{{ article.image }}" alt="">
+               <h3>{{ article.body }}</h3>
+              </h4>
+              <a href="/article/{{ article.id }}" class="btn btn-dark">Show</a>
+              <a href="/article/edit/{{ article.id }}" class="btn btn-info">Edit</a>
+              <a href="#" class="btn btn-danger delete-article" data-id="{{ article.id }}">Delete</a>   
+            </div>
+          </div>
+        </div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% else %}
+    <p>No articles to display</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
+{% endblock %}
